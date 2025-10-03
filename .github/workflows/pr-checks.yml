@@ -7,6 +7,8 @@ on:
   pull_request:
     branches: [main]
 
+  workflow_dispatch:
+
 jobs:
   # First, run the CI checks to ensure the code builds and tests pass
   run-ci-checks:
@@ -18,4 +20,4 @@ jobs:
     name: Trivy Vulnerability Scan
     # This job depends on the successful completion of the 'run-ci-checks' job
     needs: run-ci-checks
-    uses: LSEG-Immersion-Day-DevOps-workshop-2025/actions/.github/workflows/security-scan-ci.yml@main
+    uses: Tonnamkit/actions/.github/workflows/security-scan-ci.yml@main
